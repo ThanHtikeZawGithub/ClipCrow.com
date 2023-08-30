@@ -1,0 +1,141 @@
+a {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+p,
+label {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+}
+
+span {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.8125rem;
+    line-height: 52px;
+    font-weight: 700;
+    text-align: center;
+}
+
+h2 {
+    font-size: 36px;
+    line-height: 44px;
+}
+
+h3 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+}
+
+h4 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+h5 {
+    font-size: 24px;
+    line-height: 32px;
+}
+
+h6 {
+    font-size: 22px;
+    line-height: 28px;
+}
+
+
+li,
+dd {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    letter-spacing: 0.15px;
+    list-style-type: none;
+    &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    text-align: start;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-start {
+    text-align: start;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-blue {
+    color: $c-blue-dark;
+}
+
+.text-pink {
+    color: $c-tertiary-040;
+}
+
+.ex-worker {
+    color: $ex-worker;
+}
+
+.ex-staff {
+    color: $ex-staff;
+}
+
+@media screen and (max-width: 1000px) {
+    p,
+    span,
+    label {
+        font-size: 14px;
+        letter-spacing: 0.25px;
+        font-weight: 400;
+        line-height: 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    h2 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    h3 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    h4 {
+        font-size: 22px;
+        line-height: 28px;
+    }
+    h5,
+    h6 {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.15px; 
+    }
+
+    li {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.25px;
+        margin-bottom: 2rem;
+        &:last-child {
+            margin-bottom: 1rem;
+        } 
+    }
+    ul {
+        margin-bottom: 0;
+    }
+}

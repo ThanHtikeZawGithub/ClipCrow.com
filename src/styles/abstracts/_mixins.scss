@@ -1,0 +1,105 @@
+//page title for features/profile/blog/content/history/example/error
+//===================================================================
+@mixin page__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    &::before {
+      @include bg-deco(900px, 120vw, $c-primary-050);
+      top: -920px;
+      @media screen and (max-width: 1200px) {
+        top: -828px;
+      }
+    }
+    span {
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 40px;
+      @media screen and (max-width: 767px) {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+      }
+    }
+  }
+  
+  /* button in top page */
+  @mixin button($bg-color, $hover-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 568px;
+    height: 84px;
+    border: none;
+    border-radius: 42px;
+    cursor: pointer;
+    font-weight: 500;
+    &:hover {
+      background-color: $hover-color;
+    }
+    @media screen and (max-width: 1199px) {
+      font-size: 14px;
+      width: 200px;
+      height: 40px;
+      font-weight: 700;
+      line-height: 20px;
+      letter-spacing: 0.1px;
+    }
+  }
+  
+  //title in features page and usage-example page
+  //=======================================================
+  
+  @mixin title($pc-height, $sp-height) {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: $pc-height;
+      @media screen and (max-width: 767px) {
+        height: $pc-height;
+      }
+    &__bg {
+      position: absolute;
+      background-color: $c-primary-060;
+      margin: 0 auto;
+      width: 100vw;
+      height: $pc-height;
+      z-index: -1;
+      @media screen and (max-width: 767px) {
+        height: $sp-height;
+      }
+      &.left {
+        border-radius: 0px 10px 10px 0px;
+        right: 0;
+      }
+      &.right {
+        border-radius: 10px 0 0 10px;
+        left: 0;
+      }
+    }
+  }
+  
+  //======================================================
+  /* background decoration */
+  
+  @mixin bg-deco($height, $width, $bg-color) {
+    content: "";
+    display: block;
+    position: absolute;
+    overflow-x: hidden;
+    width: $width;
+    height: $height;
+    background-color: $bg-color;
+    z-index: -1;
+    margin: 3% -10% 0 -10%;
+    transform: rotate(-12deg);
+    @media screen and (max-width: 1200px) {
+      width: 200%;
+      margin: 3% -10% 0 -38%;
+    }
+  }
