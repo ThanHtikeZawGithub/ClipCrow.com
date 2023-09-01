@@ -56,14 +56,17 @@
         }
       }
     }
-    &.error:invalid {
-      border: 1px solid $input-error-message;
-    }
-    &:invalid {
-      ~ .error-message {
-        display: block;
-      }
-    }
+    // & .error {
+    //   border: 1px solid $input-error-message;
+    // }
+    // &.error:invalid {
+    //   border: 1px solid $input-error-message;
+    // }
+    // &:invalid {
+    //   ~ .error-message {
+    //     display: block;
+    //   }
+    // }
     @media screen and (max-width: 767px) {
       height: 44px;
       font-size: 14px;
@@ -71,14 +74,7 @@
       letter-spacing: 0.25px;
     }
   }
-  
-  .error-message {
-    display: none;
-    color: $input-error-message;
-    margin-top: 4px;
-    font-size: 14px;
-  }
-  
+
   .input__textarea {
     font-size: 16px;
     display: block;
@@ -106,6 +102,22 @@
       letter-spacing: 0.25px;
     }
   }
+
+  .input-error {
+    border: 1px solid $input-error-message;
+  }
+
+  .label-error {
+    color: $input-error-message;
+  }
+  
+  .error-message {
+    display: block;
+    color: $input-error-message;
+    margin-top: 4px;
+    font-size: 14px;
+  }
+
   
   .radio__wrapper {
     display: flex;
