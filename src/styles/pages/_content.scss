@@ -24,7 +24,7 @@
     pointer-events: none;
     left: 15px;
     top: 11px;
-    padding: 0 5px;
+    padding: 0;
     background: $c-neutral-100;
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
@@ -135,6 +135,9 @@
       padding: 16px;
       padding-left: 8px;
     }
+  }
+  input:focus {
+    background: #fff;
   }
   
   .input__text:not(:placeholder-shown) ~ .input__label {
@@ -277,6 +280,10 @@
           color: $c-neutral-020;
           background-color: $c-primary-040;
           border: none;
+          cursor: pointer;
+        }
+        &.prev {
+          cursor: pointer;
         }
       }
       @media screen and (max-width: 767px) {

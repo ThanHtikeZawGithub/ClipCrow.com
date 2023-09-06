@@ -1,6 +1,6 @@
 import "./styles/app.scss";
 import { useState } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm} from "react-hook-form";
 import FormConfirm from "./FormConfirm";
 import FormComplete from "./FormComplete";
 
@@ -35,7 +35,7 @@ const App = () => {
     // Send data to Slack
     if (formData) {
       try {
-        await fetch("https://hooks.slack.com/services/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",
+        await fetch("https://hooks.slack.com/services/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",
           {
             method: "POST",
             mode: "no-cors",

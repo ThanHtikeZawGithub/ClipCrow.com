@@ -1,7 +1,14 @@
+import React from "react";
 import "./styles/app.scss";
-import { useState } from "react";
 
-const FormConfirm = ({Back, Confirm, data}) => {
+interface FormConfirmProps {
+    Back: () => void; // Back is a function with no arguments and no return value
+    Confirm: () => void; // Confirm is a function with no arguments and no return value
+    data: any;
+  }
+
+
+const FormConfirm: React.FC<FormConfirmProps> = ({Back, Confirm, data}) => {
   return (
     <main>
     <section className="content__maincont">

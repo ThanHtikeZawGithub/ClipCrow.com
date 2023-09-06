@@ -1,4 +1,3 @@
-import React from 'react'
 import logo from '../assets/nav_title_footer.svg'
 
 const Footer = () => {
