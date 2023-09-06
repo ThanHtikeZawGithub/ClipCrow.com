@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useForm} from "react-hook-form";
 import FormConfirm from "./FormConfirm";
 import FormComplete from "./FormComplete";
-import axios, { AxiosHeaders } from "axios";
+import axios from "axios";
 
 type FormData = {
   name: string;
