@@ -33,7 +33,7 @@ const App = () => {
   };
 
   const handleConfirm = async () => {
-    const webhookURL = "https://hooks.slack.com/services/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"
+    const webhookURL = "https://hooks.slack.com/services/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"
     // Send data to Slack
     if (formData) {
       const data = {
