@@ -41,7 +41,8 @@ const App = () => {
       }
       try {
         const res = await axios.post(webhookURL, JSON.stringify(data),{
-          withCredentials: false
+          withCredentials: false,
+          transformRequest: (data => {return data})
         }
         );
         if (res.status === 200) {
