@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useForm} from "react-hook-form";
 import FormConfirm from "./FormConfirm";
 import FormComplete from "./FormComplete";
-import axios from "axios";
+import axios, { AxiosHeaders } from "axios";
 
 type FormData = {
   name: string;
@@ -33,7 +33,7 @@ const App = () => {
   };
 
   const handleConfirm = async () => {
-    const webhookURL = "https://hooks.slack.com/services/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"
+    const webhookURL = "https://hooks.slack.com/services/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"
     // Send data to Slack
     if (formData) {
       const data = {
@@ -42,7 +42,6 @@ const App = () => {
       try {
         const res = await axios.post(webhookURL, JSON.stringify(data),{
           withCredentials: false,
-          transformRequest: (data => {return data})
         }
         );
         if (res.status === 200) {
