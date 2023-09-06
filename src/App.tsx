@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useForm} from "react-hook-form";
 import FormConfirm from "./FormConfirm";
 import FormComplete from "./FormComplete";
+import axios from "axios";
 
 type FormData = {
   name: string;
@@ -32,22 +33,22 @@ const App = () => {
   };
 
   const handleConfirm = async () => {
+    const webhookURL = "https://hooks.slack.com/services/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"
     // Send data to Slack
     if (formData) {
+      const data = {
+        "text": `お問い合わせ:\nお名前:  ${formData.name}\nメール:  ${formData.email}\nご用件:  ${formData.business}\n内容:  ${formData.content}`
+      }
       try {
-        await fetch("https://hooks.slack.com/services/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",
-          {
-            method: "POST",
-            mode: "no-cors",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              "text": `お問い合わせ:\nお名前:  ${formData.name}\nメール:  ${formData.email}\nご用件:  ${formData.business}\n内容:  ${formData.content}`,
-            }),
-          }
+        const res = await axios.post(webhookURL, JSON.stringify(data),{
+          withCredentials: false
+        }
         );
-        setIsSubmitted(true);
+        if (res.status === 200) {
+          setIsSubmitted(true);
+        } else {
+          console.log("Fail to send data to slack")
+        }
       } catch (error) {
         console.error("Error sending form data to Slack:", error);
         // You can add code here for error handling
