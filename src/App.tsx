@@ -35,7 +35,7 @@ const App = () => {
     // Send data to Slack
     if (formData) {
       try {
-        await fetch("https://hooks.slack.com/services/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",
+        await fetch("https://hooks.slack.com/services/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",
           {
             method: "POST",
             mode: "no-cors",
