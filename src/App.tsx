@@ -35,8 +35,7 @@ const App = () => {
     // Send data to Slack
     if (formData) {
       try {
-        await fetch(
-          "https://hooks.slack.com/services/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",
+        await fetch("https://hooks.slack.com/services/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",
           {
             method: "POST",
             mode: "no-cors",
@@ -44,7 +43,7 @@ const App = () => {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              text: `New form submission:\nName: ${formData.name}\nEmail: ${formData.email}\nBusiness: ${formData.business}\nContent: ${formData.content}`,
+              text: `お問い合わせ:\nお名前:  ${formData.name}\nメール:  ${formData.email}\nご用件:  ${formData.business}\n内容:  ${formData.content}`,
             }),
           }
         );
