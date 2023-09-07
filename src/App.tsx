@@ -33,17 +33,14 @@ const App = () => {
   };
 
   const handleConfirm = async () => {
-    const webhookURL = "https://hooks.slack.com/services/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"
+    const webhookURL = "https://hooks.slack.com/services/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"
     // Send data to Slack
     if (formData) {
       const data = {
         "text": `お問い合わせ:\nお名前:  ${formData.name}\nメール:  ${formData.email}\nご用件:  ${formData.business}\n内容:  ${formData.content}`
-      }
+      };
       try {
-        const res = await axios.post(webhookURL, JSON.stringify(data),{
-          withCredentials: false,
-        }
-        );
+        const res = await axios.post(webhookURL, JSON.stringify(data));
         if (res.status === 200) {
           setIsSubmitted(true);
         } else {
