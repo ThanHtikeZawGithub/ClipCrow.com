@@ -4,10 +4,36 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles/app.scss">
     <title>ClipCrow</title>
   </head>
   <body>
+    <header>
+      <nav class="nav">
+        <a class="nav__title">
+          <img src="src/assets/nav_title.svg" alt="essential workware" />
+        </a>
+      </nav>
+    </header>
     <div id="root"></div>
+    <footer>
+      <div class="footer">
+        <div class="footer__left">
+          <img src="src/assets/nav_title_footer.svg" alt="essential workware" />
+        </div>
+        <div class="footer__right">
+        <div class="footer__link">
+          <a href="index.html">ホーム</a>
+          <a href="usage-example.html">活用例</a>
+          <a href="features.html">特徴・機能</a>
+        </div>
+        <div class="footer__link">
+          <a href="blog.html">ブログ</a>
+          <a href="content.html">お問い合わせ</a>
+          <a href="profile.html">会社情報</a>
+        </div>
+      </div>
+    </footer>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
