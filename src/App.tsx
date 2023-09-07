@@ -33,19 +33,23 @@ const App = () => {
   };
 
   const handleConfirm = async () => {
-    const webhookURL = "https://hooks.slack.com/services/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"
     // Send data to Slack
     if (formData) {
-      const data = {
-        "text": `お問い合わせ:\nお名前:  ${formData.name}\nメール:  ${formData.email}\nご用件:  ${formData.business}\n内容:  ${formData.content}`
-      };
+      const webhookURL = import.meta.env.VITE_APP_SLACK_WEBHOOK_URL;
       try {
-        const res = await axios.post(webhookURL, JSON.stringify(data));
-        if (res.status === 200) {
-          setIsSubmitted(true);
-        } else {
-          console.log("Fail to send data to slack")
-        }
+        await fetch( webhookURL,
+          {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              text: `お問い合わせ:\nお名前:  ${formData.name}\nメール:  ${formData.email}\nご用件:  ${formData.business}\n内容:  ${formData.content}`,
+            }),
+          }
+        );
+        setIsSubmitted(true);
       } catch (error) {
         console.error("Error sending form data to Slack:", error);
         // You can add code here for error handling
