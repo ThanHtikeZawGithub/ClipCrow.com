@@ -136,9 +136,6 @@
       padding-left: 8px;
     }
   }
-  input:focus {
-    background: #fff;
-  }
   
   .input__text:not(:placeholder-shown) ~ .input__label {
     top: -8px;
